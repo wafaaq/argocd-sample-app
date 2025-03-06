@@ -1,18 +1,13 @@
 apiVersion: v1  # Specifies the API version for the service resource
-kind: Service  # The type of Kubernetes resource you're creating, in this 
-case, a Service
+kind: Service  # The type of Kubernetes resource you're creating, in this case, a Service
 metadata:
   name: guestbook  # The name of the service
 spec:
-  type: NodePort  # Exposes the service via a NodePort (accessible 
-externally on the node)
+  type: NodePort  # Exposes the service via a NodePort (accessible externally on the node)
   selector:
-    app: guestbook  # The selector ensures this service targets the pods 
-with the 'app: guestbook' label
+    app: guestbook  # The selector ensures this service targets the pods with the 'app: guestbook' label
   ports:
     - port: 80  # The port that the service exposes internally
-      targetPort: 80  # The port the service forwards traffic to inside 
-the pod
-      nodePort: 30008  # The port on each node that will forward traffic 
-to the service
+      targetPort: 80  # The port the service forwards traffic to inside the pod
+      nodePort: 30008  # The port on each node that will forward traffic to the service
 
