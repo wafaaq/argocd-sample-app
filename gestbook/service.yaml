@@ -7,7 +7,7 @@ spec:
   selector:
     app: guestbook  # The selector ensures this service targets the pods with the 'app: guestbook' label
   ports:
-    - port: 80  # The port that the service exposes internally
-      targetPort: 80  # The port the service forwards traffic to inside the pod
+    - port: 8079  # The port that the service exposes internally
+      targetPort: 8079  # The port the service forwards traffic to inside the pod
       nodePort: 30008  # The port on each node that will forward traffic to the service
 
