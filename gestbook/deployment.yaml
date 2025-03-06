@@ -1,0 +1,26 @@
+apiVersion: apps/v1  # Specifies the API version for the deployment 
+resource
+kind: Deployment  # The type of Kubernetes resource you're creating, in 
+this case, a Deployment
+metadata:
+  name: guestbook  # The name of the deployment
+  labels:
+    app: guestbook  # Labels to help organize and select this deployment
+spec:
+  replicas: 2  # The number of pod replicas you want to run
+  selector:
+    matchLabels:
+      app: guestbook  # Ensures the deployment targets the correct set of 
+pods
+  template:
+    metadata:
+      labels:
+        app: guestbook  # Labels for the pods created by this deployment
+    spec:
+      containers:
+        - name: guestbook  # The name of the container within the pod
+          image: weaveworksdemos/front-end:latest  # Docker image used for 
+the container
+          ports:
+            - containerPort: 80  # Exposes port 80 from the container
+
